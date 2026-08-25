@@ -1,0 +1,20 @@
+app = "lazes-server"
+primary_region = "fra"
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  PORT = "5555"
+
+[[services]]
+  protocol = "tcp"
+  internal_schema = "tcp"
+  internal_port = 5555
+
+  [[services.ports]]
+    port = 5555
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "512mb"
